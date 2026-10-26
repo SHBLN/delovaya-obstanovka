@@ -1,4 +1,4 @@
-name = "vibe-coding-3-2"
+name = "delovaya-obstanovka"
 compatibility_date = "2025-09-03"
 
 # Cloudflare Workers Builds: static Vite app from dist/
