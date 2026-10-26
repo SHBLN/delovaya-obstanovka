@@ -8,6 +8,15 @@ test.describe('Контактные данные на сайте', () => {
     await openCatalog(page)
   })
 
+  test('в подвале указано авторство со ссылкой на Telegram @shbln96, ссылка открывается в новой вкладке', async ({ page }) => {
+    const footer = page.getByRole('contentinfo')
+    await expect(footer).toContainText('Сайт разработал')
+    const author = footer.getByRole('link', { name: '@shbln96' })
+    await expect(author).toHaveAttribute('href', 'https://t.me/shbln96')
+    await expect(author).toHaveAttribute('target', '_blank')
+    await expect(author).toHaveAttribute('rel', /noreferrer/)
+  })
+
   test('все ссылки tel: ведут на один и тот же номер', async ({ page }) => {
     const hrefs = await page.locator('a[href^="tel:"]').evaluateAll((links) => links.map((link) => link.getAttribute('href')))
     expect(hrefs.length).toBeGreaterThan(2)

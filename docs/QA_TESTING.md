@@ -1,4 +1,4 @@
-# Автотесты каталога
+﻿# Автотесты каталога
 
 Тесты написаны на Playwright и лежат в `e2e/catalog/`. Они проверяют поведение сайта глазами пользователя
 (роли, подписи, тексты), а не внутреннюю реализацию. В продакшн-коде для тестов добавлены только
@@ -8,7 +8,7 @@
 ## Запуск
 
 ```bash
-npx playwright test --project=catalog                # весь каталог (152 теста, около минуты)
+npx playwright test --project=catalog                # весь каталог (153 теста, около минуты)
 npx playwright test --project=catalog -g "поиск"     # по названию теста
 npx playwright test --project=catalog --ui           # с интерфейсом
 ```
@@ -73,3 +73,4 @@ $env:PW_CHANNEL='msedge'; npx playwright test --project=catalog
 2. Новый тест кладите в подходящий `*.spec.ts`, каждому тесту нужно самому готовить состояние (`openCatalog(page)`).
 3. Ожидайте конкретное состояние (`expect(...).toBeVisible()`, `expect.poll`), а не `waitForTimeout`.
 4. Не ослабляйте проверку, чтобы тест прошёл: сначала выясните, что сломано — сайт или тест.
+

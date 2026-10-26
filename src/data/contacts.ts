@@ -1,6 +1,10 @@
 export const PHONE_LINK = 'tel:+375336255007'
 export const EMAIL = 'delovaya-obstanovka@yandex.by'
 export const EMAIL_LINK = `mailto:${EMAIL}`
+
+// Авторство сайта (подвал).
+export const AUTHOR_HANDLE = '@shbln96'
+export const AUTHOR_LINK = 'https://t.me/shbln96'
 // Прямые ссылки на диалог с номером: приложение открывает чат сразу, без промежуточных страниц.
 export const TELEGRAM_LINK = 'tg://resolve?phone=375336255007'
 export const WHATSAPP_LINK = 'https://api.whatsapp.com/send?phone=375336255007'

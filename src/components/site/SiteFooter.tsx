@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { EMAIL, EMAIL_LINK, messengers, PHONE_LINK } from '../../data/contacts'
+import { AUTHOR_HANDLE, AUTHOR_LINK, EMAIL, EMAIL_LINK, messengers, PHONE_LINK } from '../../data/contacts'
 import { navLinks } from '../../data/navigation'
 import { createAnchorClickHandler } from '../../lib/scroll'
 import { MessengerIcon } from '../contacts/MessengerIcon'
@@ -46,6 +46,19 @@ export function SiteFooter() {
             </a>
           ))}
         </div>
+      </div>
+      <div className="border-t border-[#d8cebf]/70">
+        <p className="mx-auto max-w-7xl px-4 py-4 text-center text-xs text-navy/60 sm:px-6 lg:px-8">
+          Сайт разработал{' '}
+          <a
+            href={AUTHOR_LINK}
+            target="_blank"
+            rel="noreferrer"
+            className="font-semibold text-navy/80 underline-offset-2 hover:text-accent hover:underline"
+          >
+            {AUTHOR_HANDLE}
+          </a>
+        </p>
       </div>
     </footer>
   )
