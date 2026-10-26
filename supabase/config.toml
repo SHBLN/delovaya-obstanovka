@@ -1,0 +1,22 @@
+project_id = "yxxwpsodzksvxpvizybt"
+
+[functions.r2-upload-url]
+verify_jwt = true
+
+[functions.anymodel-chat]
+verify_jwt = true
+
+[functions.dify-knowledge-query]
+verify_jwt = false
+
+[functions.telegram-ok-reply]
+verify_jwt = false
+
+[functions.telegram-assignment-notify]
+verify_jwt = false
+
+[functions.stripe-create-checkout]
+verify_jwt = true
+
+[functions.stripe-webhook]
+verify_jwt = false

@@ -1,0 +1,35 @@
+---
+description: Промт и правила для генерации фотореалистичных изображений мебели (кресла, стулья) в интерьере для сайта "Деловая обстановка". Применять при любой генерации картинок.
+alwaysApply: false
+---
+
+# Генерация изображений мебели: стиль «профессиональная фотосъёмка»
+
+Перед вызовом `GenerateImage` для мебели всегда:
+- передавай все ракурсы товара из вложений в `reference_image_paths`, чтобы дизайн модели не менялся;
+- используй формат, который запросил пользователь (для hero-блока — `1:1`);
+- сохраняй результат в `public/` и подключай через `/имя-файла.jpg`.
+
+## Базовый промт (подставь свой товар и интерьер)
+
+```
+Candid editorial interior photograph for a furniture magazine, shot by a professional
+photographer on a Canon EOS R5 with a 50mm f/2.8 lens, natural light only, slight film
+grain, realistic lens falloff and gentle vignette. Real lived-in interior, slightly
+asymmetrical composition, camera at chair seat height looking at the [PRODUCT] from the
+reference images at a three-quarter angle, exact same design. Product is in sharp focus,
+background softly out of focus with natural bokeh. Behind it a plain matte oak desk with
+a generic black monitor with no brand logo, a slim keyboard, a ceramic mug, a few papers,
+a simple desk lamp switched off. Soft diffused overcast daylight from a window on the
+left, no harsh highlights, true-to-life muted colors, natural leather texture with subtle
+micro scratches and creases, faint dust on the wooden floor, realistic contact shadows
+under the wheels. Neutral color grading, no HDR look, no oversaturation, no glow,
+no people, no text, no logos, square 1:1 crop.
+```
+
+## Обязательные ограничения
+
+- Без людей, надписей и логотипов (в том числе на мониторе, ноутбуке, технике).
+- Без «глянцевого ИИ-вида»: никакого HDR, свечения, пересыщенных цветов, золотого часа.
+- Свет мягкий, рассеянный; цвета приглушённые; фон слегка размыт.
+- Добавлять бытовые детали и естественные несовершенства (кружка, бумаги, пыль, лёгкие потёртости).
