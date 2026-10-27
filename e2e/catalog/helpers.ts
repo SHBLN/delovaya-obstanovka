@@ -1,6 +1,6 @@
 import { expect, type Locator, type Page } from '@playwright/test'
 
-export const PHONE_DIGITS = '375336255007'
+export const PHONE_DIGITS = '375445420007'
 export const EMAIL = 'delovaya-obstanovka@yandex.by'
 
 export const CATEGORIES = ['Офисные кресла', 'Геймерские кресла', 'Кресла руководителя', 'Кухонные стулья'] as const

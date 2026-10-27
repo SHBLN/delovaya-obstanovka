@@ -1,7 +1,7 @@
 export function PhoneLabel() {
   return (
     <>
-      +375 <span className="font-bold text-accent">(33)</span> 625-50-07
+      +375 <span className="font-bold text-accent">(44)</span> 542-00-07
     </>
   )
 }

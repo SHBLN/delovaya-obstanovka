@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { AUTHOR_HANDLE, AUTHOR_LINK, EMAIL, EMAIL_LINK, messengers, PHONE_LINK } from '../../data/contacts'
+import { AUTHOR_HANDLE, AUTHOR_LINK, companyInfo, EMAIL, EMAIL_LINK, messengers, PHONE_LINK } from '../../data/contacts'
 import { navLinks } from '../../data/navigation'
 import { createAnchorClickHandler } from '../../lib/scroll'
 import { MessengerIcon } from '../contacts/MessengerIcon'
@@ -46,6 +46,16 @@ export function SiteFooter() {
             </a>
           ))}
         </div>
+      </div>
+      <div className="border-t border-[#d8cebf]/70">
+        <dl className="mx-auto grid max-w-7xl gap-x-8 gap-y-4 px-4 py-6 text-xs leading-relaxed text-navy/60 sm:grid-cols-2 sm:px-6 lg:px-8">
+          {companyInfo.map((item) => (
+            <div key={item.label}>
+              <dt className="font-semibold uppercase tracking-[0.08em] text-navy/50">{item.label}</dt>
+              <dd className="mt-1 text-navy/70">{item.value}</dd>
+            </div>
+          ))}
+        </dl>
       </div>
       <div className="border-t border-[#d8cebf]/70">
         <p className="mx-auto max-w-7xl px-4 py-4 text-center text-xs text-navy/60 sm:px-6 lg:px-8">

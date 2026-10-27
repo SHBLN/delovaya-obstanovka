@@ -1,13 +1,24 @@
-export const PHONE_LINK = 'tel:+375336255007'
+export const PHONE_LINK = 'tel:+375445420007'
 export const EMAIL = 'delovaya-obstanovka@yandex.by'
 export const EMAIL_LINK = `mailto:${EMAIL}`
+
+// Сведения о продавце (подвал).
+export const companyInfo = [
+  { label: 'УНП (учётный номер плательщика)', value: '192993790' },
+  {
+    label: 'Государственная регистрация',
+    value:
+      'Минский горисполком, 09.11.2017. Республика Беларусь, 220108, г. Минск, ул. Корженевского, д. 14, корпус 40А, ком. 236 (Б2/кп)',
+  },
+  { label: 'Способы оплаты', value: 'Наличный и безналичный расчёт' },
+]
 
 // Авторство сайта (подвал).
 export const AUTHOR_HANDLE = '@shbln96'
 export const AUTHOR_LINK = 'https://t.me/shbln96'
 // Прямые ссылки на диалог с номером: приложение открывает чат сразу, без промежуточных страниц.
-export const TELEGRAM_LINK = 'tg://resolve?phone=375336255007'
-export const WHATSAPP_LINK = 'https://api.whatsapp.com/send?phone=375336255007'
+export const TELEGRAM_LINK = 'tg://resolve?phone=375445420007'
+export const WHATSAPP_LINK = 'https://api.whatsapp.com/send?phone=375445420007'
 
 // Контуры логотипов — Simple Icons (CC0), цвета — фирменные.
 export const messengers = [

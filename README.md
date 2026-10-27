@@ -55,7 +55,9 @@ lib/
 ## Как менять содержимое
 
 - **Товары, цены, цвета, материалы** — `src/data/products.ts`. Материалы из списка `hiddenMaterialFilterOptions` остаются в карточке, но не показываются в фильтре. Каждый товар должен находиться хотя бы по одному пункту фильтра «Материал» (это проверяет тест).
-- **Телефон, почта, мессенджеры** — `src/data/contacts.ts`.
+- **Телефон, почта, мессенджеры** — `src/data/contacts.ts`. При смене номера нужно поправить три места: `PHONE_LINK`, `TELEGRAM_LINK` и `WHATSAPP_LINK` в этом файле, видимый текст в `src/components/contacts/PhoneLabel.tsx` и `PHONE_DIGITS` в `e2e/catalog/helpers.ts`.
+- **Сведения о продавце в подвале** (УНП, государственная регистрация, способы оплаты) — `companyInfo` в `src/data/contacts.ts`.
+- **Авторство сайта в подвале** — `AUTHOR_HANDLE` и `AUTHOR_LINK` в `src/data/contacts.ts`.
 - **Пункты меню** — `src/data/navigation.ts`.
 - **Заголовок, описание и иконка вкладки** — `index.html` и `public/favicon.png`.
 

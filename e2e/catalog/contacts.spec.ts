@@ -67,7 +67,7 @@ test.describe('Контактные данные на сайте', () => {
 
   test('график работы одинаков везде: ежедневно с 9:00 до 21:00, без выходных', async ({ page }) => {
     const text = await page.locator('body').innerText()
-    const hours = [...text.matchAll(/с\s*(\d{1,2}:\d{2})\s*до\s*(\d{1,2}:\d{2})/g)].map((match) => `${match[1]}-${match[2]}`)
+    const hours = [...text.matchAll(/с\s*(\d{1,2}:\d{2})\s*до\s*(\d{1,2}:\d{2})/gi)].map((match) => `${Number.parseInt(match[1], 10)}:${match[1].slice(-2)}-${Number.parseInt(match[2], 10)}:${match[2].slice(-2)}`)
     expect(hours.length).toBeGreaterThanOrEqual(2)
     expect(new Set(hours)).toEqual(new Set(['9:00-21:00']))
     expect(text.match(/без выходных/g)?.length).toBeGreaterThanOrEqual(2)

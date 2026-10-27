@@ -9,6 +9,7 @@ import {
   openModalFor,
   readCards,
   search,
+  waitForScrollSettled,
 } from './helpers'
 
 test.describe('Окно «Подробнее»', () => {
@@ -81,6 +82,8 @@ test.describe('Окно «Подробнее»', () => {
   test('[BUG?] пока окно открыто, страница под ним не прокручивается', async ({ page }) => {
     await page.evaluate(() => window.scrollTo({ top: 1500, behavior: 'instant' }))
     await openModalFor(page, 5)
+    // Playwright подводит карточку плавной прокруткой — ждём её конца, чтобы не принять её за прокрутку пользователя.
+    await waitForScrollSettled(page)
     const before = await page.evaluate(() => window.scrollY)
     await page.mouse.move(4, 400)
     await page.mouse.wheel(0, 900)
@@ -90,9 +93,12 @@ test.describe('Окно «Подробнее»', () => {
   test('после закрытия позиция прокрутки и открытый поиск не сбиваются', async ({ page }) => {
     await search(page, 'атлант')
     await openModalFor(page, 1)
+    // Playwright подводит карточку к центру экрана плавной прокруткой — ждём её конца, иначе позиция «плывёт».
+    await waitForScrollSettled(page)
     const before = await page.evaluate(() => window.scrollY)
     await modal(page).getByRole('button', { name: 'Закрыть', exact: true }).click()
     await expect(modal(page)).toHaveCount(0)
+    await waitForScrollSettled(page)
     expect(await page.evaluate(() => window.scrollY)).toBe(before)
     await expect(page.getByLabel('Поиск по названию')).toHaveValue('атлант')
   })
